@@ -32,18 +32,16 @@
   @if (filteredChallenges.length > 0) {
     <div class="challenges">
       @for (challenge of filteredChallenges; track getChallengeKey($index, challenge)) {
-        <challenge-card
-          [challenge]="challenge"
-          [applicationConfiguration]="applicationConfiguration"
-          [openCodingChallengeDialog]="openCodingChallengeDialog.bind(this)"
-          [repeatChallengeNotification]="repeatChallengeNotification.bind(this)"
-          [unlockHint]="unlockHint.bind(this)"
-          [lastUnlockedChallengeKey]="lastUnlockedChallengeKey"
-          [highlightCodingButton]="highlightedChallengeKey === challenge.key"
-          [challengeId]="'challenge-' + challenge.key"
-          [ngClass]="{ solved: challenge.solved, unsolved: !challenge.solved, disabled: challenge.disabledEnv !== null }"
-          />
-      }
+        <div class="challenges">
+      @for (challenge of filteredChallenges; track getChallengeKey($index, challenge)) {
+        
+       <button (click)="challenge.showHint = !challenge.showHint" style="margin-top:10px;">
+  Show Hint
+</button>
+
+<div *ngIf="challenge.showHint" style="background:#f1f1f1; padding:8px;">
+  💡 Try analyzing how this challenge works.
+</div>
     </div>
   } @else {
     <!-- only showing when there are more than 1 challenge in total. not completely loaded otherwise -->
