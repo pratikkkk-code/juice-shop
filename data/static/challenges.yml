@@ -2,12 +2,12 @@
 - 
   name: 'Password Hash Leak'
   category: 'Sensitive Data Exposure'
-  description: 'Obtain the password (hash) of the currently logged-in user directly from a REST API endpoint.'
+  description: 'A password hash leak occurs when a database containing transformed, non-plaintext password "fingerprints" (hashes) is exposed, often through breaches'
   difficulty: 2
   hints:
-    - 'You need to understand what happens "behind the scenes", so make sure to use your DevTools or a proxy to inspect network traffic.'
-    - 'Look for an API endpoint that already returns some user information.'
-    - 'An overly generic solution for data retrieval can backfire if not properly safeguarded.'
+  - "Inspect network requests"
+  - "Check for input validation issues"
+  - "Try manipulating request parameters"
   mitigationUrl: 'https://owasp.org/API-Security/editions/2019/en/0xa3-excessive-data-exposure'
   key: passwordHashLeakChallenge
 -
