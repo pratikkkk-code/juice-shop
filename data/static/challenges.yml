@@ -2,12 +2,12 @@
 - 
   name: 'Password Hash Leak'
   category: 'Sensitive Data Exposure'
-  description: 'A password hash leak occurs when a database containing transformed, non-plaintext password "fingerprints" (hashes) is exposed, often through breaches'
+  description: 'A password hash leak occurs when a database containing scrambled, cryptographic representations of user passwords is stolen, exposing these "hashes" to unauthorized parties'
   difficulty: 2
   hints:
-  - "Inspect network requests"
-  - "Check for input validation issues"
-  - "Try manipulating request parameters"
+    - "Inspect request using DevTools"
+    - "Look for validation issues"
+    - "Try modifying input"
   mitigationUrl: 'https://owasp.org/API-Security/editions/2019/en/0xa3-excessive-data-exposure'
   key: passwordHashLeakChallenge
 -
