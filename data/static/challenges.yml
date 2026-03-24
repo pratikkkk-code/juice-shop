@@ -2,7 +2,7 @@
 - 
   name: 'Password Hash Leak'
   category: 'Sensitive Data Exposure'
-  description: 'A password hash leak occurs when a database containing scrambled, cryptographic representations of user passwords is stolen, exposing these "hashes" to unauthorized parties'
+  description: 'The password hash leak occurs when a database containing scrambled, cryptographic representations of user passwords is stolen, exposing these "hashes" to unauthorized parties'
   difficulty: 2
   hints:
     - "Inspect request using DevTools"
